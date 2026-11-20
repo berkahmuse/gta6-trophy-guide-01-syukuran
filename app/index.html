@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platinum Road — Leonida Trophy Atlas</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="mast-title">
+    <p class="kicker">GRAND THEFT AUTO VI · PLAYSTATION 5 · OFFLINE ATLAS</p>
+    <h1>Platinum Road</h1>
+    <p class="sub">The Leonida trophy atlas: all 55 official trophies with a cited guide for each, a six-stage roadmap to the platinum, the missables flagged, and a tracker that saves in your browser.</p>
+  </div>
+  <div class="mast-progress">
+    <div class="ring" id="ring"><span id="ringPct">0%</span></div>
+    <p id="progressLine">0 of 55 earned</p>
+    <p class="grades-line">1 platinum · 2 gold · 6 silver · 46 bronze · 28 hidden</p>
+  </div>
+</header>
+
+<nav class="views" aria-label="Views">
+  <button type="button" data-view="tracker" class="view-btn active">Tracker &amp; guides</button>
+  <button type="button" data-view="roadmap" class="view-btn">Roadmap to platinum</button>
+  <button type="button" data-view="missables" class="view-btn">Missables (9)</button>
+  <button type="button" data-view="save" class="view-btn">Save &amp; settings</button>
+</nav>
+
+<section id="view-tracker" class="view">
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="Search trophies, missions, places…" aria-label="Search trophies">
+    <div class="chips" id="kindChips" role="group" aria-label="Filter by kind">
+      <button type="button" data-kind="all" class="chip active">All kinds</button>
+      <button type="button" data-kind="story" class="chip">Story</button>
+      <button type="button" data-kind="missable" class="chip">Missable</button>
+      <button type="button" data-kind="collectibles" class="chip">Collectibles</button>
+      <button type="button" data-kind="activities" class="chip">Activities</button>
+      <button type="button" data-kind="online" class="chip">Partner / online</button>
+    </div>
+    <label class="grade-filter">Grade
+      <select id="gradeFilter">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label class="spoiler-toggle"><input type="checkbox" id="spoilerToggle" checked> Spoiler shield: hide story trophies until earned</label>
+  </div>
+  <div class="layout">
+    <ol id="trophyList" class="trophy-list"></ol>
+    <aside id="detailPane" class="detail-pane" aria-live="polite">
+      <p class="detail-hint">Select a trophy on the left to read its full guide, its sources, its roadmap stage and its missable status here.</p>
+    </aside>
+  </div>
+</section>
+
+<section id="view-roadmap" class="view" hidden>
+  <h2>Roadmap to the platinum</h2>
+  <p class="lede">Built from the official descriptions: story first, because six named-mission trophies and the choices trophy can be left behind; collectibles and counters in the middle, because they are long; money and heat near the end; 100% and the platinum last. Each stage below shows your live progress from the tracker.</p>
+  <div id="roadmapStages"></div>
+</section>
+
+<section id="view-missables" class="view" hidden>
+  <h2>Missable trophies — do not leave these behind</h2>
+  <p class="lede">Nine trophies are flagged missable, each from its official description alone: six hang on a single named mission (Trust, Break the Bank, Family Matters, DWNFALL, Hi-Jacked, Snow Storm), one on a single location (Catch Me If You Can, at VCIA), one on choices that cannot be unmade (Actions Speak Louder), and one on needing a genuine first failure (Bad Luck, I Guess). Finish each inside its window, or return with mission replay.</p>
+  <ol id="missableList" class="trophy-list wide"></ol>
+</section>
+
+<section id="view-save" class="view" hidden>
+  <h2>Save, export, settings</h2>
+  <p class="lede">Progress (earned trophies and every counter) is saved in this browser with localStorage as you work. Export it to a file to move it or back it up; import that file to restore it here.</p>
+  <div class="save-actions">
+    <button type="button" id="exportBtn">Export progress (.json)</button>
+    <label class="import-label">Import progress <input type="file" id="importFile" accept="application/json"></label>
+    <button type="button" id="resetBtn">Reset all progress</button>
+  </div>
+  <label class="spoiler-toggle block"><input type="checkbox" id="spoilerToggle2" checked> Spoiler shield on: the names and descriptions of unearned story trophies are hidden in the tracker</label>
+  <h3>How the guides cite their sources</h3>
+  <p>Official names, descriptions and grades follow the PlayStation 5 trophy list as published by Exophase and PSNProfiles; the two agree on every name, description and grade. Every guide is this atlas's own writing, built from those official descriptions, and each trophy's detail pane names its sources beside the guide. Where a description is vague, the guide says so and claims nothing more precise.</p>
+  <h3>About this atlas</h3>
+  <p>Platinum Road is an original, unofficial fan guide. It uses no Rockstar Games logo, artwork or screenshots. It works fully offline from its own files.</p>
+</section>
+
+<footer>
+  <p>Platinum Road — Leonida Trophy Atlas · 55 trophies · progress is stored only in your browser · unofficial fan guide, not affiliated with Rockstar Games or PlayStation.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
