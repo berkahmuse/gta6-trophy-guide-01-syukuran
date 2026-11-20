@@ -1,6 +1,9 @@
 // Platinum Road filters: kind chips, grade select, search, and the spoiler rule.
 // Spoiler rule: with the shield on, a story trophy that is hidden on PlayStation and
 // not yet earned shows neither its name nor its official description.
+// Kinds are the official list's shapes: story, collectibles and activities come from
+// the descriptions themselves, missable is this atlas's flag, and partner/online
+// covers the two trophies the descriptions tie to playing with your partner.
 export function isSpoilerHidden(trophy, state) {
   return Boolean(state.spoiler && trophy.hidden && trophy.kinds.includes("story") && !state.earned.includes(trophy.name));
 }

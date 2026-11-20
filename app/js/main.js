@@ -65,6 +65,7 @@ function renderProgress() {
   const pct = Math.round((state.earned.length / trophies.length) * 100);
   document.getElementById("ringPct").textContent = `${pct}%`;
   document.getElementById("progressLine").textContent = `${state.earned.length} of ${trophies.length} earned`;
+  document.title = `Platinum Road — ${state.earned.length}/55 trophies (${pct}%)`;
 }
 
 function renderAll() {

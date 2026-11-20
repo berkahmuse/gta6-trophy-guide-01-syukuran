@@ -1,4 +1,6 @@
 // Platinum Road — Leonida Trophy Atlas: a working gta6-trophy-guide-01 entry (Node 22, standard library only).
+// Revised after the first full build: the atlas gained a live progress title, import validation and
+// hover/focus polish, and the Trust guide gained its roadmap note — the entry below is unchanged plumbing.
 // The guide is this directory's app/ folder,
 // plain static files a browser opens at app/index.html (ES modules, CSS, no build step), offline: it loads nothing
 // over the network, and its trophy list and guides are app/data/trophies.json. The program hands it in: it copies app/

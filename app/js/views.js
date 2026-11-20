@@ -18,6 +18,7 @@ function tag(text, cls = "") {
 export function trophyRow(trophy, state, { onToggle, onSelect, onCount }) {
   const li = document.createElement("li");
   li.className = "trophy-row";
+  li.title = trophy.name;
   if (state.earned.includes(trophy.name)) li.classList.add("earned");
   const hidden = isSpoilerHidden(trophy, state);
 

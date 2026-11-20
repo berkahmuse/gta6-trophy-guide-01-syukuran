@@ -33,9 +33,15 @@ export function exportState(state) {
 export async function importState(file) {
   const parsed = JSON.parse(await file.text());
   if (!parsed || !Array.isArray(parsed.earned)) throw new Error("not a Platinum Road progress file");
+  const counts = {};
+  if (parsed.counts && typeof parsed.counts === "object") {
+    for (const [name, value] of Object.entries(parsed.counts)) {
+      if (typeof value === "number" && Number.isFinite(value) && value >= 0) counts[name] = Math.floor(value);
+    }
+  }
   return {
     earned: parsed.earned.filter((n) => typeof n === "string"),
-    counts: parsed.counts && typeof parsed.counts === "object" ? parsed.counts : {},
+    counts,
     spoiler: parsed.spoiler !== false,
   };
 }
